@@ -68,8 +68,8 @@ function processUploadedData($items = array())
     $savePath = getPathFromHash($metadata['checksum'], $metadata['extension'], $IMAGE_ROOT);
     saveData($bindata, $savePath);
 
-    $filename = pathinfo($savePath, PATHINFO_BASENAME);
-    array_push($names, $filename);
+    $filename = pathinfo($savePath, PATHINFO_FILENAME);
+    array_push($names, $metadata);
   }
 
   return $names;
